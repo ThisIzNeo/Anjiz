@@ -1,0 +1,92 @@
+{
+  "tasks": [
+    {
+      "id": "2",
+      "title": "Fix authentication bug",
+      "description": "Resolve the issue where users are logged out after refreshing the page.",
+      "status": "Done",
+      "priority": "Medium",
+      "date": "17-04-2026 - 10:00AM",
+      "assignedTo": "Houari azize"
+    },
+    {
+      "id": "3",
+      "title": "Deploy to production",
+      "description": "Run final smoke tests and push build to the live server.",
+      "status": "Done",
+      "priority": "Low",
+      "date": "18-04-2026 - 09:30AM",
+      "assignedTo": "Houari azize"
+    },
+    {
+      "title": "Test",
+      "description": "Cocking pizza",
+      "status": "To do",
+      "priority": "Medium",
+      "date": "7/11/2026, 4:05:16 PM",
+      "assignedTo": "Houari azize",
+      "id": "wAyGZTV1cPI"
+    },
+    {
+      "title": "GG",
+      "description": "hasan hasan",
+      "status": "In progress",
+      "priority": "Medium",
+      "date": "7/11/2026",
+      "assignedTo": "Houari azize",
+      "id": "FeaZcvHS28g"
+    },
+    {
+      "title": "sddsds",
+      "description": "sdsds",
+      "status": "Done",
+      "priority": "High",
+      "date": "7/11/2026",
+      "assignedTo": "Djamel Salem",
+      "id": "00lQvezmorg"
+    },
+    {
+      "title": "GG",
+      "description": "dzdqds",
+      "status": "To do",
+      "priority": "High",
+      "date": "7/11/2026",
+      "assignedTo": "Djamel Salem",
+      "id": "t0G7GGJnObQ"
+    },
+    {
+      "title": "sdqdqsd",
+      "description": "qsdqdqsdqd",
+      "status": "To do",
+      "priority": "High",
+      "date": "7/11/2026",
+      "assignedTo": "Houari azize",
+      "id": "7uwUDtw_KwI"
+    },
+    {
+      "title": "dfwxcw",
+      "description": "xwcwxcwxc",
+      "status": "To do",
+      "priority": "Low",
+      "date": "7/11/2026",
+      "assignedTo": "Djamel Salem",
+      "id": "JxmWC-It-xc"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "Houari azize",
+      "email": "Team_Leader@test.com",
+      "password": "Anjiz_2026",
+      "role": "Team_Leader"
+    },
+    {
+      "id": "2",
+      "username": "Djamel Salem",
+      "email": "Team_Leader@test.com",
+      "password": "Anjiz_2026",
+      "role": "Designer"
+    }
+  ]
+}
