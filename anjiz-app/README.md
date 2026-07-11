@@ -28,9 +28,9 @@ This application utilizes a modern, strictly typed stack to ensure scalability a
 
 - Task Lifecycle Management: Full CRUD operations allowing for the seamless creation, editing, and deletion of tasks.
 
--Data Retrieval & Organization: Advanced search and filtering capabilities to manage high volumes of task data efficiently.
+- Data Retrieval & Organization: Advanced search and filtering capabilities to manage high volumes of task data efficiently.
 
--Performance Dashboard: A centralized analytics view that utilizes data processing to provide visual summaries and productivity statistics.
+- Performance Dashboard: A centralized analytics view that utilizes data processing to provide visual summaries and productivity statistics.
 
 ### ⚙️ Getting Started
 
@@ -40,10 +40,10 @@ To evaluate the application locally, please follow the steps below:
 
 Node.js installed on your system.
 
--Setup
-Clone the repository and navigate to the project directory.
+- Setup Clone the repository and navigate to the project directory.
 
--Install the necessary dependencies:
+
+- Install the necessary dependencies:
 
 
 `npm install`
@@ -51,17 +51,17 @@ Clone the repository and navigate to the project directory.
 - Execution
 This application requires a dual-process environment to function correctly. Please run the following commands in separate terminal sessions:
 
--Initialize the local API Server:
+- Initialize the local API Server:
 
 
 `npm run server`
 
--Launch the development environment:
+- Launch the development environment:
 
 
 `npm run dev`
 
--The application will be accessible at the local URL provided by the Vite development server (typically http://localhost:5173).
+- The application will be accessible at the local URL provided by the Vite development server (typically http://localhost:5173).
 
 ### 💡 Engineering Highlights
 
