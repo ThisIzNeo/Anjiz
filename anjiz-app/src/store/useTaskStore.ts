@@ -17,6 +17,7 @@ interface TaskState {
   users: { id: string; username: string }[];
   fetchUsers: () => Promise<void>;
   selectedTask: Task | null;
+  loading: boolean;
   fetchTasks: () => Promise<void>;
   deleteTask: (id: number) => Promise<void>;
   updateTask: (task: Task) => Promise<void>;
@@ -26,7 +27,7 @@ interface TaskState {
 
 export const useTaskStore = create<TaskState>((set) => ({
   tasks: [],
-  users: [], 
+  users: [],
   loading: false,
   selectedTask: null,
 
