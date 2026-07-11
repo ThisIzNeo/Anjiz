@@ -46,13 +46,13 @@ const CreateTask = () => {
               name="title"
               type="text"
               placeholder="Task Title"
-              className="input input-bordered w-full"
+              className="input input-bordered w-full" min={2} max={37}
               required
             />
             <textarea
               name="description"
               placeholder="Description"
-              className="textarea textarea-bordered w-full"
+              className="textarea textarea-bordered w-full" maxLength={300}
               required
             />
             <select name="priority" className="select select-bordered w-full">

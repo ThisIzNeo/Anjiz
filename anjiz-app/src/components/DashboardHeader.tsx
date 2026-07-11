@@ -18,7 +18,8 @@ export const DashboardHeader = () => {
             {monthName} <span className="text-teal-400">{year}</span>
           </div>
         </div>
-      </div>    
+      </div>
+          
       <CreateTask />  
     </div>
   );

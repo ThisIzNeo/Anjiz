@@ -15,14 +15,24 @@ export interface Task {
 interface TaskState {
   tasks: Task[];
   users: { id: string; username: string }[];
-  fetchUsers: () => Promise<void>;
   selectedTask: Task | null;
   loading: boolean;
+  searchQuery: string;
+  filterStatus: string;
+  filterPriority: string;
+  currentUser: { username: string; role: string } | null;
+  taskToDelete: number | null; 
+  setCurrentUser: (user: { username: string; role: string }) => void;
+  setTaskToDelete: (id: number | null) => void; 
+  fetchUsers: () => Promise<void>;
   fetchTasks: () => Promise<void>;
   deleteTask: (id: number) => Promise<void>;
   updateTask: (task: Task) => Promise<void>;
   addTask: (task: Omit<Task, "id">) => Promise<void>;
   setSelectedTask: (task: Task | null) => void;
+  setSearchQuery: (query: string) => void;
+  setFilterStatus: (status: string) => void;
+  setFilterPriority: (priority: string) => void;
 }
 
 export const useTaskStore = create<TaskState>((set) => ({
@@ -30,11 +40,20 @@ export const useTaskStore = create<TaskState>((set) => ({
   users: [],
   loading: false,
   selectedTask: null,
+  searchQuery: "",
+  filterStatus: "All",
+  filterPriority: "All",
+  currentUser: null,
+  taskToDelete: null,
+
+  setCurrentUser: (user) => set({ currentUser: user }),
+  setTaskToDelete: (id) => set({ taskToDelete: id }),
 
   fetchUsers: async () => {
     const res = await apiClient.get("/users");
     set({ users: res.data });
   },
+
   fetchTasks: async () => {
     set({ loading: true });
     try {
@@ -65,4 +84,7 @@ export const useTaskStore = create<TaskState>((set) => ({
   },
 
   setSelectedTask: (task) => set({ selectedTask: task }),
+  setSearchQuery: (query) => set({ searchQuery: query }),
+  setFilterStatus: (status) => set({ filterStatus: status }),
+  setFilterPriority: (priority) => set({ filterPriority: priority }),
 }));
