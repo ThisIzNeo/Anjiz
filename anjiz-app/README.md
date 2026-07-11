@@ -2,11 +2,15 @@
 
 Anjiz is a high-performance task management application developed as a technical demonstration of full-stack integration and state management. The project serves as a showcase of clean code practices, efficient UI/UX design, and robust data handling.
 
+### Login to app
+
+`"email": "Team_Leader@test.com", "password": "Anjiz_2026"`
+
 ### 🛠 Technical Architecture
 
 This application utilizes a modern, strictly typed stack to ensure scalability and maintainability:
 
-- **Frontend Framework:** React, TypeScript, Vite 
+- **Frontend Framework:** React, TypeScript, Vite
 
 - **Styling:** Tailwind CSS & DaisyUI
 
@@ -42,22 +46,18 @@ Node.js installed on your system.
 
 - Setup Clone the repository and navigate to the project directory.
 
-
 - Install the necessary dependencies:
-
 
 `npm install`
 
 - Execution
-This application requires a dual-process environment to function correctly. Please run the following commands in separate terminal sessions:
+  This application requires a dual-process environment to function correctly. Please run the following commands in separate terminal sessions:
 
 - Initialize the local API Server:
-
 
 `npm run server`
 
 - Launch the development environment:
-
 
 `npm run dev`
 
