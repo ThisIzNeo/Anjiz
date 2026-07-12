@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+ 
 import { create } from "zustand";
 import { apiClient } from "../api/axiosInstance";
 
@@ -21,9 +21,9 @@ interface TaskState {
   filterStatus: string;
   filterPriority: string;
   currentUser: { username: string; role: string } | null;
-  taskToDelete: number | null; 
+  taskToDelete: number | null;
   setCurrentUser: (user: { username: string; role: string }) => void;
-  setTaskToDelete: (id: number | null) => void; 
+  setTaskToDelete: (id: number | null) => void;
   fetchUsers: () => Promise<void>;
   fetchTasks: () => Promise<void>;
   deleteTask: (id: number) => Promise<void>;
@@ -50,37 +50,58 @@ export const useTaskStore = create<TaskState>((set) => ({
   setTaskToDelete: (id) => set({ taskToDelete: id }),
 
   fetchUsers: async () => {
-    const res = await apiClient.get("/users");
-    set({ users: res.data });
+    try {
+      const res = await apiClient.get("/users");
+      set({ users: res.data });
+    } catch (error) {
+      console.error("Failed to fetch users", error);
+    }
   },
 
   fetchTasks: async () => {
     set({ loading: true });
     try {
       const res = await apiClient.get("/tasks");
-      set({ tasks: res.data, loading: false });
+      set({ tasks: res.data });
     } catch (error) {
+      console.error("Error:", error);
+    } finally {
       set({ loading: false });
     }
   },
 
   deleteTask: async (id) => {
-    await apiClient.delete(`/tasks/${id}`);
-    set((state) => ({ tasks: state.tasks.filter((t) => t.id !== id) }));
+    set({ loading: true });
+    try {
+      await apiClient.delete(`/tasks/${id}`);
+      set((state) => ({ tasks: state.tasks.filter((t) => t.id !== id) }));
+    } finally {
+      set({ loading: false });
+    }
   },
 
   updateTask: async (updatedTask) => {
-    await apiClient.put(`/tasks/${updatedTask.id}`, updatedTask);
-    set((state) => ({
-      tasks: state.tasks.map((t) =>
-        t.id === updatedTask.id ? updatedTask : t,
-      ),
-    }));
+    set({ loading: true });
+    try {
+      await apiClient.put(`/tasks/${updatedTask.id}`, updatedTask);
+      set((state) => ({
+        tasks: state.tasks.map((t) =>
+          t.id === updatedTask.id ? updatedTask : t,
+        ),
+      }));
+    } finally {
+      set({ loading: false });
+    }
   },
 
   addTask: async (newTask) => {
-    const res = await apiClient.post("/tasks", newTask);
-    set((state) => ({ tasks: [...state.tasks, res.data] }));
+    set({ loading: true });
+    try {
+      const res = await apiClient.post("/tasks", newTask);
+      set((state) => ({ tasks: [...state.tasks, res.data] }));
+    } finally {
+      set({ loading: false });
+    }
   },
 
   setSelectedTask: (task) => set({ selectedTask: task }),

@@ -3,7 +3,7 @@
     {
       "title": "UI/UX Professional Polish",
       "description": "Refine the CSS on the checkout page to ensure it strictly follows professional international standards (clean lines, high contrast) and remove any lingering complex aesthetic elements.",
-      "status": "To do",
+      "status": "Done",
       "priority": "Low",
       "date": "7/11/2026",
       "assignedTo": "Djamel Salem",
@@ -21,7 +21,7 @@
     {
       "title": "Component Library Modularization",
       "description": "Extract repeated UI elements (buttons, product cards, inputs) into a clean, reusable component directory to streamline future builds.",
-      "status": "To do",
+      "status": "Done",
       "priority": "High",
       "date": "7/11/2026",
       "assignedTo": "Houari azize",
@@ -30,7 +30,7 @@
     {
       "title": "Order Management Dashboard",
       "description": "Develop a simple administrative view that allows for easy toggling of order statuses (e.g., Pending, Shipped, Delivered).",
-      "status": "To do",
+      "status": "Done",
       "priority": "Medium",
       "date": "7/11/2026",
       "assignedTo": "Djamel Salem",
@@ -48,7 +48,7 @@
     {
       "title": "Error Logging Integration",
       "description": "Implement a basic error tracking service (or local logging system) to capture and categorize failed requests in the production environment.",
-      "status": "To do",
+      "status": "In progress",
       "priority": "Medium",
       "date": "7/11/2026",
       "assignedTo": "Houari azize",
@@ -88,5 +88,6 @@
       "password": "Anjiz_2026",
       "role": "Designer"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark, cupcake;
+  themes: light --default;
+  /* By the way we can add dark mode in daisyUI by adding the line down */
+
+  /* themes: light --default, dark --prefersdark, cupcake; */
 }

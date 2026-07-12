@@ -3,10 +3,9 @@ import { LoginPage } from "./features/auth/LoginPage";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { PublicRoute } from "./components/PublicRoute";
 import DashboardPage from "./pages/DashboardPage";
-import "react-toastify/dist/ReactToastify.css";
-
-import "./App.css";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
 
 export default function App() {
   return (
@@ -23,12 +22,12 @@ export default function App() {
         <Route path="/" element={<Navigate to="/dashboard" />} />
       </Routes>
       <ToastContainer
-        position="top-right" 
-        autoClose={1000} 
-        hideProgressBar={false} 
+        position="top-right"
+        autoClose={1000}
+        hideProgressBar={false}
         newestOnTop={true}
-        closeOnClick 
-        pauseOnHover 
+        closeOnClick
+        pauseOnHover
       />
     </BrowserRouter>
   );

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../../store/useAuthStore";
 import { loginSchema, type LoginFormData } from "./schemas/loginSchema";
 import { toast } from "react-toastify";
+import loginBg from "../../../public/loginWallpaper.png"; 
 import "../../App.css";
 
 export const LoginPage = () => {
@@ -33,21 +34,30 @@ export const LoginPage = () => {
   };
 
   return (
-    <div className="flex h-screen items-center justify-center bg-base-200">
+    <div
+      className="flex h-screen items-center justify-center"
+      style={{
+        backgroundImage: `url(${loginBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="card w-96 bg-base-100 shadow-xl p-8"
+        className="card w-full max-w-md bg-white/10 backdrop-blur-md shadow-2xl p-10 border border-white/20 rounded-xl"
       >
-        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
+        <h2 className="text-3xl font-extrabold mb-8 text-center text-white tracking-tight">
+          Sign In
+        </h2>
 
         {authError && (
           <div
             role="alert"
-            className="alert alert-error mb-4 text-sm text-white"
+            className="alert alert-error mb-6 text-sm bg-red-600/90 text-white rounded-lg p-3"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="stroke-current shrink-0 h-6 w-6"
+              className="stroke-current shrink-0 h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
             >
@@ -62,33 +72,33 @@ export const LoginPage = () => {
           </div>
         )}
 
-        <div className="form-control w-full mb-4">
+        <div className="form-control w-full mb-5">
           <input
             {...register("email")}
             type="email"
-            placeholder="Email"
-            className={`input input-bordered w-full ${errors.email ? "input-error" : ""}`}
+            placeholder="Email address"
+            className={`input input-bordered w-full bg-white/20 text-white placeholder:text-gray-200 border-white/20 focus:border-white focus:bg-white/30 ${errors.email ? "input-error border-red-500" : ""}`}
           />
           {errors.email && (
-            <p className="text-error text-xs mt-1">{errors.email.message}</p>
+            <p className="text-red-300 text-xs mt-1.5">{errors.email.message}</p>
           )}
         </div>
 
-        <div className="form-control w-full mb-6">
+        <div className="form-control w-full mb-8">
           <input
             {...register("password")}
             type="password"
             placeholder="Password"
-            className={`input input-bordered w-full ${errors.password ? "input-error" : ""}`}
+            className={`input input-bordered w-full bg-white/20 text-white placeholder:text-gray-200 border-white/20 focus:border-white focus:bg-white/30 ${errors.password ? "input-error border-red-500" : ""}`}
           />
           {errors.password && (
-            <p className="text-error text-xs mt-1">{errors.password.message}</p>
+            <p className="text-red-300 text-xs mt-1.5">{errors.password.message}</p>
           )}
         </div>
 
         <button
           type="submit"
-          className={`btn btn-primary w-full ${isSubmitting ? "loading" : ""}`}
+          className={`btn btn-primary w-full text-lg font-semibold bg-blue-600 border-none hover:bg-blue-700 transition duration-300 ${isSubmitting ? "loading" : ""}`}
           disabled={isSubmitting}
         >
           {isSubmitting ? "Logging in..." : "Login"}

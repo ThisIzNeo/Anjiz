@@ -1,5 +1,3 @@
-import CreateTask from "./CreateTask";
-
 export const DashboardHeader = () => {
   const date = new Date();
   const day = date.getDate().toString().padStart(2, '0');
@@ -20,7 +18,6 @@ export const DashboardHeader = () => {
         </div>
       </div>
           
-      <CreateTask />  
     </div>
   );
 };
